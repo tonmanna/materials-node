@@ -1,7 +1,7 @@
 class CalculatorModel {
   constructor (first, second, operator) {
-    this.first = first
-    this.second = second
+    this.first = Number(first)
+    this.second = Number(second)
     this.operator = operator
   }
 
@@ -20,6 +20,9 @@ class CalculatorModel {
       case "/":
         return first / second
         break
+      case "^":
+        return Math.pow(first,second)
+        break;
       default:
         throw new Error('Invalid operator')
     }
